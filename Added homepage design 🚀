@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gadgets Mela Store | Best Smart Gadgets & Daily Deals</title>
+  <meta name="description" content="Discover the best smart gadgets, daily deals, honest reviews, and useful accessories in India at Gadgets Mela Store." />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f7f9fc;
+      color: #1f2937;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header {
+      background: #111827;
+      color: #fff;
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #f59e0b;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #f59e0b;
+      color: #111827;
+    }
+
+    .btn-primary:hover {
+      background: #d97706;
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: #111827;
+      border: 2px solid #e5e7eb;
+    }
+
+    .btn-secondary:hover {
+      background: #f3f4f6;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: white;
+      padding: 80px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #e5e7eb;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 28px;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-box h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #fbbf24;
+    }
+
+    .hero-box ul {
+      padding-left: 20px;
+      color: #f3f4f6;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 14px;
+      color: #111827;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: #6b7280;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.10);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      color: #111827;
+    }
+
+    .card p {
+      color: #6b7280;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    .category-tag {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .product-price {
+      font-weight: bold;
+      color: #111827;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 18px;
+    }
+
+    .features li {
+      margin-bottom: 8px;
+      color: #4b5563;
+      font-size: 14px;
+    }
+
+    .highlight {
+      background: #fff7ed;
+    }
+
+    .blog-card small {
+      color: #f59e0b;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      color: #111827;
+    }
+
+    .cta-banner h2 {
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+
+    .cta-banner p {
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+
+    .trust-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 25px;
+    }
+
+    .trust-box {
+      background: #ffffff;
+      padding: 22px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      padding: 40px 0;
+      margin-top: 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 24px;
+    }
+
+    .footer-grid h4 {
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .footer-grid a {
+      display: block;
+      margin-bottom: 8px;
+      color: #d1d5db;
+      font-size: 14px;
+    }
+
+    .copyright {
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid,
+      .grid-3,
+      .grid-4,
+      .trust-points,
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid,
+      .grid-3,
+      .grid-4,
+      .trust-points,
+      .footer-grid,
+      .nav {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .cta-banner h2 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">Gadgets Mela</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="deals.html">Deals</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Best Smart Gadgets & Daily Deals in India</h1>
+        <p>Discover useful gadgets, trending accessories, honest recommendations, and top online deals — all in one place.</p>
+        <div class="hero-buttons">
+          <a href="shop.html" class="btn btn-primary">Shop Now</a>
+          <a href="deals.html" class="btn btn-secondary">View Today's Deals</a>
+        </div>
+      </div>
+      <div class="hero-box">
+        <h3>Why People Love Gadgets Mela</h3>
+        <ul>
+          <li>Useful gadget picks for daily life</li>
+          <li>Budget-friendly deal highlights</li>
+          <li>Simple buying guides for beginners</li>
+          <li>Affiliate-ready product recommendations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Shop by Category</h2>
+      <p class="section-subtitle">Explore trending gadget categories that convert well and help users quickly find the right products.</p>
+      <div class="grid-3">
+        <div class="card">
+          <span class="category-tag">Popular</span>
+          <h3>Mobile Accessories</h3>
+          <p>Chargers, stands, selfie lights, holders, cables, and smart phone accessories.</p>
+          <a href="shop.html" class="btn btn-primary">Explore</a>
+        </div>
+        <div class="card">
+          <span class="category-tag">Top Deals</span>
+          <h3>Home Gadgets</h3>
+          <p>Useful home tools, cleaning gadgets, organizers, mini appliances, and more.</p>
+          <a href="shop.html" class="btn btn-primary">Explore</a>
+        </div>
+        <div class="card">
+          <span class="category-tag">Trending</span>
+          <h3>Smart Devices</h3>
+          <p>Smart products, daily tech tools, automation gadgets, and modern utility devices.</p>
+          <a href="shop.html" class="btn btn-primary">Explore</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight">
+    <div class="container">
+      <h2 class="section-title">Trending Products</h2>
+      <p class="section-subtitle">These product blocks are perfect for affiliate clicks. Replace the sample content with your real offers.</p>
+      <div class="grid-4">
+        <div class="card">
+          <h3>Magnetic Selfie Light</h3>
+          <p>Portable LED light for reels, selfies, video calls, and content creation.</p>
+          <span class="product-price">Check latest price</span>
+          <ul class="features">
+            <li>✔ Portable and foldable</li>
+            <li>✔ Creator-friendly</li>
+            <li>✔ Easy to carry</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Buy Now</a>
+        </div>
+        <div class="card">
+          <h3>Car Phone Mount</h3>
+          <p>Hands-free driving with a strong grip and adjustable dashboard placement.</p>
+          <span class="product-price">Check latest price</span>
+          <ul class="features">
+            <li>✔ Safer driving</li>
+            <li>✔ Easy angle adjustment</li>
+            <li>✔ Universal fit</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Buy Now</a>
+        </div>
+        <div class="card">
+          <h3>Portable Garment Steamer</h3>
+          <p>Quick wrinkle removal solution for daily use, travel, and office wear.</p>
+          <span class="product-price">Check latest price</span>
+          <ul class="features">
+            <li>✔ Travel friendly</li>
+            <li>✔ Fast heat-up</li>
+            <li>✔ Compact design</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Buy Now</a>
+        </div>
+        <div class="card">
+          <h3>Mini Storage Organizer</h3>
+          <p>Smart organizer for SUV travel, home utility, and compact storage needs.</p>
+          <span class="product-price">Check latest price</span>
+          <ul class="features">
+            <li>✔ Space saving</li>
+            <li>✔ Durable build</li>
+            <li>✔ Multi-use product</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Today’s Hot Deals</h2>
+      <p class="section-subtitle">Use this section to feature products with urgency, discounts, and attention-grabbing CTA buttons.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Best Deal Under ₹499</h3>
+          <p>Budget-friendly gadgets that feel premium and are easy to promote on reels or shorts.</p>
+          <a href="deals.html" class="btn btn-primary">View Offer</a>
+        </div>
+        <div class="card">
+          <h3>Useful Gadgets Under ₹999</h3>
+          <p>Perfect for listicle blog posts, comparison pages, and affiliate video descriptions.</p>
+          <a href="deals.html" class="btn btn-primary">See Deals</a>
+        </div>
+        <div class="card">
+          <h3>Amazon Finds for Daily Use</h3>
+          <p>Promote practical gadgets that solve real problems and improve click-through rate.</p>
+          <a href="deals.html" class="btn btn-primary">Check Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight">
+    <div class="container">
+      <h2 class="section-title">Latest Blog Posts</h2>
+      <p class="section-subtitle">SEO traffic comes from blog content. These sample cards can be linked to your money pages and product reviews.</p>
+      <div class="grid-3">
+        <div class="card blog-card">
+          <small>Buying Guide</small>
+          <h3>Best Gadgets Under ₹999 in India</h3>
+          <p>Top useful gadgets for budget buyers, content creators, and daily lifestyle upgrades.</p>
+          <a href="blog/best-gadgets-under-999.html" class="btn btn-primary">Read More</a>
+        </div>
+        <div class="card blog-card">
+          <small>Comparison</small>
+          <h3>Top Home Gadgets You’ll Actually Use</h3>
+          <p>Find practical home gadgets that are not gimmicks and are easier to convert into sales.</p>
+          <a href="blog/best-home-gadgets.html" class="btn btn-primary">Read More</a>
+        </div>
+        <div class="card blog-card">
+          <small>Trending</small>
+          <h3>Best Car Accessories for Long Drives</h3>
+          <p>Comfort, convenience, and safety gadgets that travelers and drivers actively search for.</p>
+          <a href="blog/best-car-accessories.html" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Join Daily Gadget Deal Alerts</h2>
+        <p>Turn visitors into repeat buyers by sending them fresh gadget deals through WhatsApp, Telegram, or email updates.</p>
+        <a href="contact.html" class="btn btn-secondary">Join Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Why Trust Gadgets Mela?</h2>
+      <p class="section-subtitle">This section helps increase trust and improves conversions on affiliate pages.</p>
+      <div class="trust-points">
+        <div class="trust-box">
+          <h3>Honest Picks</h3>
+          <p>We focus on useful gadgets that solve real problems instead of random products with no purpose.</p>
+        </div>
+        <div class="trust-box">
+          <h3>Budget-Friendly Finds</h3>
+          <p>Our content is built around affordable products that are easier for Indian buyers to consider.</p>
+        </div>
+        <div class="trust-box">
+          <h3>Easy Buying Guides</h3>
+          <p>We make gadget selection simple with short descriptions, clear benefits, and fast product discovery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Gadgets Mela Store</h4>
+          <p>Your destination for smart gadgets, useful accessories, and daily deal discoveries.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="deals.html">Deals</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2026 Gadgets Mela Store. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
